@@ -46,7 +46,7 @@ class Calendario {
         ]
     }
 
-    function GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
+    GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
 
