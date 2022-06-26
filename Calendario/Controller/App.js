@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     // Criar calendário
     const articleCalendario = document.createElement("article")
     const paragrafo = document.createElement("p")
-    paragrafo.appendChild(document.createTextNode(calendario.inicioDoCalendario.dia))
+    paragrafo.appendChild(document.createTextNode(calendario.hoje))
     articleCalendario.appendChild(paragrafo)
 
     // Montar página
