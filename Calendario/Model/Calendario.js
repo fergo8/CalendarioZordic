@@ -1,16 +1,16 @@
 class Calendario {
     constructor() {
-        var hojeGregoriano = new Date(Date.now())
+        var diaDeHoje = new Date(Date.now())
 
         this.hojeGregoriano = {
-            "dia": hojeGregoriano.getDate(),
-            "mes": hojeGregoriano.getMonth() + 1,
-            "ano": hojeGregoriano.getFullYear()
+            "dia": diaDeHoje.getDate(),
+            "mes": diaDeHoje.getMonth() + 1,
+            "ano": diaDeHoje.getFullYear()
         }
 
         this.diaDeReferenciaGregoriano = { "dia": 22, "mes": 9, "ano": 2022 }
 
-        this.hoje = GerarDiaDeHoje(this.diaDeReferenciaGregoriano, this.hojeGregoriano)
+        this.hoje = { "dia": 0, "mes": 0, "ano": 0 }
 
         this.diasDoMes = [
             { "dia": 1, "atual": false },
@@ -42,7 +42,7 @@ class Calendario {
             { "dia": 27, "atual": false },
             { "dia": 28, "atual": false },
             { "dia": 29, "atual": false },
-            { "dia": 30, "atual": false },
+            { "dia": 30, "atual": false }
         ]
     }
 
@@ -54,4 +54,5 @@ class Calendario {
 
         return hoje
     }
+    
 }
