@@ -57,7 +57,7 @@ class Calendario {
         // Soma os dias de cada mês do dia 01/01/0001 até a data em questão, desconsiderando regra de anos bissextos
         qtdDias += (data.ano - 1) * 365
 
-        for(var mes = 1; mes < data.mes; mes++) {
+        for (var mes = 1; mes < data.mes; mes++) {
             qtdDias += meses[mes-1]
         }
 
@@ -67,7 +67,7 @@ class Calendario {
         var diasExtras = (data.ano / 4) - (data.ano / 100) + (data.ano / 400)
 
         // Adiciona +1 dia caso ano atual seja bissexto e já tenha passado de fevereiro
-        if(this.EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
+        if (this.EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
             qtdDias += 1;
         }
 
@@ -81,13 +81,41 @@ class Calendario {
         return qtdDiasAteHoje - qtdDiasReferencia
     }
 
+    CalcularDiaDeHoje(diaDeReferencia, qtdDias) {
+        var hoje = { "dia": 0, "mes": 0, "ano": 0 }
+        var qtdMeses = 0
+        var qtdAnos = 0
+
+        if ((qtdDias * -1) > 30) {
+            qtdMeses = Math.floor(qtdDias / 30)
+            qtdDias = qtdDias - (qtdMeses * 30)
+        }
+
+        if (qtdMeses > 0) {
+            qtdAnos = Math.floor(qtdMeses / 12)
+            qtdMeses = qtdMeses - (qtdAnos * 12)
+        }
+
+        if (qtdMeses == 0) {
+            qtdMeses = 1
+        }
+
+        if (qtdAnos == 0) {
+            qtdAnos = 1
+        }
+
+        hoje = { "dia": qtdDias, "mes": qtdMeses, "ano": qtdAnos }
+
+        return hoje
+    }
+
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
 
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
-        console.log(qtdDias)
+        hoje = this.CalcularDiaDeHoje(diaDeReferencia, qtdDias)
 
         return hoje
     }
