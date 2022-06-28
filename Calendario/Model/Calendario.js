@@ -46,22 +46,8 @@ class Calendario {
         ]
     }
 
-    GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
-        var hoje = { "dia": 0, "mes": 0, "ano": 0 }
-        var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
-
-        var qtdDias = CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
-
-        console.log(qtdDias)
-
-        return hoje
-    }
-    
-    CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
-        var qtdDiasReferencia = DataParaQuantidadeDeDias(diaDeReferenciaGregoriano)
-        var qtdDiasAteHoje = DataParaQuantidadeDeDias(hojeGregoriano)
-
-        return qtdDiasAteHoje - qtdDiasReferencia
+    EhAnoBissexto(ano) {
+        return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
     }
 
     DataParaQuantidadeDeDias(data) {
@@ -81,14 +67,28 @@ class Calendario {
         var diasExtras = (data.ano / 4) - (data.ano / 100) + (data.ano / 400)
 
         // Adiciona +1 dia caso ano atual seja bissexto e já tenha passado de fevereiro
-        if(ehBissexto(data.ano) && (data.mes - 1) >= 2) {
+        if(EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
             qtdDias += 1;
         }
 
         return qtdDias
     }
+    
+    CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
+        var qtdDiasReferencia = DataParaQuantidadeDeDias(diaDeReferenciaGregoriano)
+        var qtdDiasAteHoje = DataParaQuantidadeDeDias(hojeGregoriano)
 
-    EhAnoBissexto(ano) {
-        return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
+        return qtdDiasAteHoje - qtdDiasReferencia
+    }
+
+    GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
+        var hoje = { "dia": 0, "mes": 0, "ano": 0 }
+        var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
+
+        var qtdDias = CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
+
+        console.log(qtdDias)
+
+        return hoje
     }
 }
