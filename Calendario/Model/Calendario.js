@@ -85,7 +85,7 @@ class Calendario {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
 
-        var qtdDias = CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
+        var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
         console.log(qtdDias)
 
