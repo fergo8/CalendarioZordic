@@ -10,7 +10,7 @@ class Calendario {
 
         this.diaDeReferenciaGregoriano = { "dia": 22, "mes": 9, "ano": 2022 }
 
-        this.hoje = { "dia": null, "mes": null, "ano": null }
+        this.hoje = this.GerarDiaDeHoje(this.diaDeReferenciaGregoriano, this.hojeGregoriano)
 
         this.diasDoMes = [
             { "dia": 1, "atual": false },
@@ -67,7 +67,7 @@ class Calendario {
         var diasExtras = (data.ano / 4) - (data.ano / 100) + (data.ano / 400)
 
         // Adiciona +1 dia caso ano atual seja bissexto e já tenha passado de fevereiro
-        if(EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
+        if(this.EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
             qtdDias += 1;
         }
 
@@ -75,8 +75,8 @@ class Calendario {
     }
     
     CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
-        var qtdDiasReferencia = DataParaQuantidadeDeDias(diaDeReferenciaGregoriano)
-        var qtdDiasAteHoje = DataParaQuantidadeDeDias(hojeGregoriano)
+        var qtdDiasReferencia = this.DataParaQuantidadeDeDias(diaDeReferenciaGregoriano)
+        var qtdDiasAteHoje = this.DataParaQuantidadeDeDias(hojeGregoriano)
 
         return qtdDiasAteHoje - qtdDiasReferencia
     }

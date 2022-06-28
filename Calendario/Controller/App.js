@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     const calendario = new Calendario()
 
-    calendario.hoje = calendario.GerarDiaDeHoje(calendario.diaDeReferenciaGregoriano, calendario.hojeGregoriano)
-
     // Criar menu
     const articleMenu = document.createElement("article")
     const titulo = document.createElement("h1")
