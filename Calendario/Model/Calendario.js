@@ -57,7 +57,7 @@ class Calendario {
         // Soma os dias de cada mês do dia 01/01/0001 até a data em questão, desconsiderando regra de anos bissextos
         qtdDias += (data.ano - 1) * 365
 
-        for(mes = 1; mes < data.mes; mes++) {
+        for(var mes = 1; mes < data.mes; mes++) {
             qtdDias += meses[mes-1]
         }
 
