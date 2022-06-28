@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     calendario.diasDoMes
 
-    for (var mes = 0; mes < calendario.diasDoMes; mes++) {
+    for (var mes = 0; mes < calendario.diasDoMes.length; mes++) {
         const div = document.createElement("div")
         div.appendChild(document.createTextNode(calendario.diasDoMes[mes].dia))
         articleCalendario.appendChild(div)

@@ -81,8 +81,9 @@ class Calendario {
         return qtdDiasAteHoje - qtdDiasReferencia
     }
 
-    CalcularDiaDeHoje(diaDeReferencia, qtdDias) {
+    CalcularDiaDeHoje(qtdDias) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
+        var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
         var qtdMeses = 0
         var qtdAnos = 0
 
@@ -91,31 +92,26 @@ class Calendario {
             qtdDias = qtdDias - (qtdMeses * 30)
         }
 
-        if (qtdMeses > 0) {
+        if ((qtdMeses) > 0) {
             qtdAnos = Math.floor(qtdMeses / 12)
             qtdMeses = qtdMeses - (qtdAnos * 12)
         }
 
-        if (qtdMeses == 0) {
-            qtdMeses = 1
+        hoje = { 
+            "dia": diaDeReferencia.dia + qtdDias,
+            "mes": diaDeReferencia.mes + qtdMeses,
+            "ano": diaDeReferencia.ano + qtdAnos
         }
-
-        if (qtdAnos == 0) {
-            qtdAnos = 1
-        }
-
-        hoje = { "dia": qtdDias, "mes": qtdMeses, "ano": qtdAnos }
 
         return hoje
     }
 
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
-        var diaDeReferencia = { "dia": 1, "mes": 1, "ano": 2327 }
-
+        
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
-        hoje = this.CalcularDiaDeHoje(diaDeReferencia, qtdDias)
+        hoje = this.CalcularDiaDeHoje(qtdDias)
 
         return hoje
     }
