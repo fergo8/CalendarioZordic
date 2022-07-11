@@ -4,7 +4,7 @@ class Calendario {
 
         this.hojeGregoriano = {
             "dia": 25,  //diaDeHoje.getDate(),
-            "mes": 06,  //diaDeHoje.getMonth() + 1,
+            "mes": 6,  //diaDeHoje.getMonth() + 1,
             "ano": 2022 //diaDeHoje.getFullYear()
         }
 
