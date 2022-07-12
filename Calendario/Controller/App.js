@@ -46,26 +46,21 @@ function GerarCalentario(calendario) {
     divLinha3.setAttribute("class", "row")
 
     for (var mes = 0; mes < calendario.diasDoMes.length; mes++) {
+        var prop = { "class": "col bloco-dia" }
+
+        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+            calendario.diasDoMes[mes].atual = true
+            prop.class = "col bloco-dia bloco-dia-atual"
+        }
+        
         if (calendario.diasDoMes[mes].posicaoCalendario == 1) {
-            divLinha1.appendChild(CriarElementoHTML(
-                "div",
-                { "class": "col bloco-dia" },
-                calendario.diasDoMes[mes].dia
-            ))
+            divLinha1.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
         }
         if (calendario.diasDoMes[mes].posicaoCalendario == 2) {
-            divLinha2.appendChild(CriarElementoHTML(
-                "div",
-                { "class": "col bloco-dia" },
-                calendario.diasDoMes[mes].dia
-            ))
+            divLinha2.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
         }
         if (calendario.diasDoMes[mes].posicaoCalendario == 3) {
-            divLinha3.appendChild(CriarElementoHTML(
-                "div",
-                { "class": "col bloco-dia" },
-                calendario.diasDoMes[mes].dia
-            ))
+            divLinha3.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
         }
     }
 

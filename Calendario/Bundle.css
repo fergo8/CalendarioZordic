@@ -13,6 +13,11 @@
 #titulo {
     display: inline;
     margin-left: 20px;
+    margin-right: 30px;
+}
+
+.mes-ano-selecionado {
+    font-weight: bold;
 }
 
 /* ===== Calendário ===== */
@@ -36,4 +41,7 @@
     border-color: lightgray;
     text-align: center;
     height: 100px;
+}
+.bloco-dia-atual {
+    background-color: blueviolet;
 }
