@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     // Criar menu
     const articleMenu = document.createElement("article")
-    articleMenu.setAttribute("class", "article-calendario")
+    articleMenu.setAttribute("class", "article-menu")
 
     articleMenu.appendChild(CriarElementoHTML(
         "img", 

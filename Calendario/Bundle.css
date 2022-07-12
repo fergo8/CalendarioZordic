@@ -1,12 +1,19 @@
 
 /* ===== Menu ===== */
+.article-menu {
+    padding: 20px 5% 0px 5%;
+
+}
 
 #logo {
-    max-height: 10px;
+    margin-top: 10px;
+    max-height: 40px;
+    vertical-align: baseline !important;
 }
 
 #titulo {
-    max-width: 250px;
+    display: inline;
+    margin-left: 20px;
 }
 
 /* ===== Calendário ===== */
