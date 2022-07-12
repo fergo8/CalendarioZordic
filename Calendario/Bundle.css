@@ -1,4 +1,14 @@
 
+/* ===== Menu ===== */
+
+#logo {
+    max-height: 10px;
+}
+
+#titulo {
+    max-width: 250px;
+}
+
 /* ===== Calendário ===== */
 .article-border {
     border-top: 0.8px;
