@@ -1,11 +1,21 @@
-article {
-    border-top: 0.5px;
+
+/* ===== Calendário ===== */
+.article-border {
+    border-top: 0.8px;
     border-style: solid;
     border-color: lightgray;
 }
 
+.article-calendario {
+    padding: 0px 5% 0px 5%;
+}
+
 .bloco-dia {
-    border: 0.5px solid lightgray;
+    border-bottom: 0.8px;
+    border-right: 0.8px;
+    border-left: 0.8px;
+    border-style: solid;
+    border-color: lightgray;
     text-align: center;
-    height: 20px;
+    height: 100px;
 }

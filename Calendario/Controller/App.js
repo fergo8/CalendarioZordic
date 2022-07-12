@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
     articleMenu.appendChild(CriarElementoHTML(
         "h1", 
         { "id": "titulo" }, 
-        "Olá mundo!"
+        "Calendário"
     ))
 
     // Criar calendário
     const articleCalendario = document.createElement("article")
+    articleCalendario.setAttribute("class", "article-border article-calendario")
 
     const divLinha1 = document.createElement("div")
     const divLinha2 = document.createElement("div")
