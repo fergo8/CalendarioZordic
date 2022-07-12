@@ -2,7 +2,7 @@
 /* ===== Calendário ===== */
 .article-border {
     border-top: 0.8px;
-    border-style: solid;
+    border-top-style: solid;
     border-color: lightgray;
 }
 
@@ -14,7 +14,9 @@
     border-bottom: 0.8px;
     border-right: 0.8px;
     border-left: 0.8px;
-    border-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
     border-color: lightgray;
     text-align: center;
     height: 100px;
