@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     var app = document.getElementById("app")
+    const calendario = new Calendario()
 
-    app.appendChild(GerarMenuSuperior())
-    app.appendChild(GerarCalentario())
+    app.appendChild(GerarMenuSuperior(calendario))
+    app.appendChild(GerarCalentario(calendario))
 })
 
-function GerarMenuSuperior() {
+function GerarMenuSuperior(calendario) {
     const articleMenu = document.createElement("article")
     articleMenu.setAttribute("class", "article-menu")
 
@@ -15,7 +16,7 @@ function GerarMenuSuperior() {
             "id": "logo",
             "src": "../Images/Logo.png"
         },
-        "Calendário"
+        ""
     ))
 
     articleMenu.appendChild(CriarElementoHTML(
@@ -24,12 +25,16 @@ function GerarMenuSuperior() {
         "Calendário"
     ))
 
+    articleMenu.appendChild(CriarElementoHTML(
+        "span", 
+        { "class": "mes-ano-selecionado" }, 
+        "Mês " + calendario.hoje.mes + " de " + calendario.hoje.ano
+    ))
+
     return articleMenu
 }
 
-function GerarCalentario() {
-    const calendario = new Calendario()
-
+function GerarCalentario(calendario) {
     const articleCalendario = document.createElement("article")
     articleCalendario.setAttribute("class", "article-border article-calendario")
 
