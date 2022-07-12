@@ -25,21 +25,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
         if (calendario.diasDoMes[mes].posicaoCalendario == 1) {
             divLinha1.appendChild(CriarElementoHTML(
                 "div",
-                { "class": "col" },
+                { "class": "col bloco-dia" },
                 calendario.diasDoMes[mes].dia
             ))
         }
         if (calendario.diasDoMes[mes].posicaoCalendario == 2) {
             divLinha2.appendChild(CriarElementoHTML(
                 "div",
-                { "class": "col" },
+                { "class": "col bloco-dia" },
                 calendario.diasDoMes[mes].dia
             ))
         }
         if (calendario.diasDoMes[mes].posicaoCalendario == 3) {
             divLinha3.appendChild(CriarElementoHTML(
                 "div",
-                { "class": "col" },
+                { "class": "col bloco-dia" },
                 calendario.diasDoMes[mes].dia
             ))
         }
