@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     var app = document.getElementById("app")
 
-    const calendario = new Calendario()
+    app.appendChild(GerarMenuSuperior())
+    app.appendChild(GerarCalentario())
+})
 
-    // Criar menu
+function GerarMenuSuperior() {
     const articleMenu = document.createElement("article")
     articleMenu.setAttribute("class", "article-menu")
 
@@ -22,7 +24,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
         "Calendário"
     ))
 
-    // Criar calendário
+    return articleMenu
+}
+
+function GerarCalentario() {
+    const calendario = new Calendario()
+
     const articleCalendario = document.createElement("article")
     articleCalendario.setAttribute("class", "article-border article-calendario")
 
@@ -68,10 +75,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
         calendario.hoje.dia + "/" + calendario.hoje.mes + "/" + calendario.hoje.ano
     ))
 
-    // Montar página
-    app.appendChild(articleMenu)
-    app.appendChild(articleCalendario)
-})
+    return articleCalendario
+}
 
 function CriarElementoHTML(tag, prop, texto) {
     const elemento = document.createElement(tag)
