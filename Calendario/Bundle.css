@@ -1,4 +1,11 @@
+article {
+    border-top: 0.5px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
 .bloco-dia {
-    border: 1px solid grey;
+    border: 0.5px solid lightgray;
     text-align: center;
+    height: 20px;
 }
