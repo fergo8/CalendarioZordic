@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     // Criar menu
     const articleMenu = document.createElement("article")
+    articleMenu.setAttribute("class", "article-calendario")
+
+    articleMenu.appendChild(CriarElementoHTML(
+        "img", 
+        {
+            "id": "logo",
+            "src": "../Images/Logo.png"
+        },
+        "Calendário"
+    ))
+
     articleMenu.appendChild(CriarElementoHTML(
         "h1", 
         { "id": "titulo" }, 
@@ -70,6 +81,9 @@ function CriarElementoHTML(tag, prop, texto) {
     }
     if (prop.class != null) {
         elemento.setAttribute("class", prop.class)
+    }
+    if (prop.src != null) {
+        elemento.setAttribute("src", prop.src)
     }
 
     elemento.appendChild(document.createTextNode(texto))
