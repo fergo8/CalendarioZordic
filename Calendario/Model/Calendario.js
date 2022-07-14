@@ -57,7 +57,7 @@ class Calendario {
 
         // Soma os dias de cada mês do dia 22/09/-305 até a data em questão, desconsiderando regra de anos bissextos
         linha = 1
-        var ano = diaDeReferenciaGregoriano.ano + dataGregoriano.ano
+        var ano = diaDeReferenciaGregoriano.ano + dataGregoriano.ano - 1
         qtdDias += (ano - 1) * 365
 
         console.log("Linha" + linha)
@@ -103,42 +103,43 @@ class Calendario {
         return this.DataParaQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
     }
 
-    CalcularDiaDeHoje(qtdDias, diaDeReferencia) {
-        var hoje = { "dia": 0, "mes": 0, "ano": 0 }
+    CalcularDiaDoCalendarioNovo(qtdDias, diaDeReferencia) {
+        var data = { "dia": 0, "mes": 0, "ano": 0 }
         var qtdMeses = 0
         var qtdAnos = 0
 
         // Valida se quantidade de dias é negativo
         if (qtdDias < 0) {
             console.log("Quantidade de dias negativo: " + qtdDias)
-            return hoje
+            return data
         }
 
-        //var qtdCiclosBissextosPassados = Math.floor(qtdDias / 1461)
+        // Calcula quantidade de dias extras pelos anos bissextos
+        var diasExtras = Math.floor(qtdDias / 1461)
 
-        //if (qtdCiclosBissextosPassados > 0) {
-        //    qtdAnos += qtdCiclosBissextosPassados * 4
-        //}
-
-        // código antigo
-        if (qtdDias > 30) {
-            qtdMeses = Math.floor(qtdDias / 30)
-            qtdDias = qtdDias - (qtdMeses * 30)
+        // Calcula anos do calendário novo
+        if (diasExtras > 0) {
+            qtdAnos += diasExtras * 4
+            qtdDias = qtdDias - (diasExtras * 1461)
         }
 
-        if ((qtdMeses) > 0) {
-            qtdAnos = Math.floor(qtdMeses / 12)
-            qtdMeses = qtdMeses - (qtdAnos * 12)
+        if (qtdDias > 365) {
+            var anosAdicionais = Math.floor(qtdDias / 365)
+            qtdAnos += anosAdicionais
+            qtdDias = qtdDias - (anosAdicionais * 365)
         }
 
-        hoje = { 
-            "dia": diaDeReferencia.dia + qtdDias,
-            "mes": diaDeReferencia.mes + qtdMeses,
-            "ano": diaDeReferencia.ano + qtdAnos
-        }
-        // fim código antigo
+        // Calcula meses do calendário novo
 
-        return hoje
+
+        // Gera objeto 
+        data = { 
+            "dia": qtdDias,
+            "mes": qtdMeses,
+            "ano": qtdAnos
+        }
+
+        return data
     }
 
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
@@ -146,7 +147,7 @@ class Calendario {
         
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
-        hoje = this.CalcularDiaDeHoje(qtdDias, diaDeReferenciaGregoriano)
+        hoje = this.CalcularDiaDoCalendarioNovo(qtdDias, diaDeReferenciaGregoriano)
 
         return hoje
     }
