@@ -50,21 +50,22 @@ class Calendario {
         return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
     }
 
-    DataParaQuantidadeDeDias(data) {
+    DataParaQuantidadeDeDias(diaDeReferenciaGregoriano, dataGregoriano) {
         var qtdDias = 0
         var meses = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
         var linha = 0
 
         // Soma os dias de cada mês do dia 22/09/-305 até a data em questão, desconsiderando regra de anos bissextos
         linha = 1
-        var ano = 305 + data.ano
+        var ano = diaDeReferenciaGregoriano.ano + dataGregoriano.ano
         qtdDias += (ano - 1) * 365
 
         console.log("Linha" + linha)
         console.log(qtdDias)
 
         linha = 2
-        for (var mes = 1; mes < data.mes; mes++) {
+        var totalMeses = diaDeReferenciaGregoriano.mes + dataGregoriano.mes
+        for (var mes = 1; mes < totalMeses; mes++) {
             qtdDias += meses[mes-1]
         }
         
@@ -72,7 +73,7 @@ class Calendario {
         console.log(qtdDias)
 
         linha = 3
-        qtdDias += data.dia
+        qtdDias += (diaDeReferenciaGregoriano.dia + dataGregoriano.dia)
         
         console.log("Linha" + linha)
         console.log(qtdDias)
@@ -81,18 +82,14 @@ class Calendario {
         // Calcula dias extras por anos bissextos
         var diasExtras = Math.floor((ano / 4) - (ano / 100) + (ano / 400))
         
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
-        linha = 5
         qtdDias += diasExtras
 
         console.log("Linha" + linha)
         console.log(qtdDias)
 
-        linha = 6
+        linha = 5
         // Adiciona +1 dia caso ano atual seja bissexto e já tenha passado de fevereiro
-        if (this.EhAnoBissexto(data.ano) && (data.mes - 1) >= 2) {
+        if (this.EhAnoBissexto(dataGregoriano.ano) && (dataGregoriano.mes - 1) >= 2) {
             qtdDias += 1;
         }
         
@@ -102,8 +99,8 @@ class Calendario {
         return qtdDias
     }
     
-    CalcularQuantidadeDeDias(data) {
-        return this.DataParaQuantidadeDeDias(data)
+    CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
+        return this.DataParaQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
     }
 
     CalcularDiaDeHoje(qtdDias, diaDeReferencia) {
@@ -147,7 +144,7 @@ class Calendario {
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         
-        var qtdDias = this.CalcularQuantidadeDeDias(hojeGregoriano)
+        var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
         hoje = this.CalcularDiaDeHoje(qtdDias, diaDeReferenciaGregoriano)
 
