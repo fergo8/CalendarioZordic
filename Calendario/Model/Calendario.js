@@ -64,7 +64,7 @@ class Calendario {
         console.log(qtdDias)
 
         linha = 2
-        var totalMeses = diaDeReferenciaGregoriano.mes + dataGregoriano.mes
+        var totalMeses = diaDeReferenciaGregoriano.mes + dataGregoriano.mes // corrigir cálculo do mês
         for (var mes = 1; mes < totalMeses; mes++) {
             qtdDias += meses[mes-1]
         }
@@ -119,7 +119,7 @@ class Calendario {
 
         // Calcula anos do calendário novo
         if (diasExtras > 0) {
-            qtdAnos += diasExtras * 4
+            qtdAnos += diasExtras * 4 + 1
             qtdDias = qtdDias - (diasExtras * 1461)
         }
 
@@ -130,7 +130,11 @@ class Calendario {
         }
 
         // Calcula meses do calendário novo
+        qtdMeses = Math.floor(qtdDias / 30) + 1
 
+        if (qtdMeses > 1) {
+            qtdDias = qtdDias - (qtdMeses * 30)
+        }
 
         // Gera objeto 
         data = { 
