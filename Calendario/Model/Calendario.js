@@ -8,7 +8,7 @@ class Calendario {
             "ano": 2022 //diaDeHoje.getFullYear()
         }
 
-        this.diaDeReferenciaGregoriano = { "dia": 22, "mes": 9, "ano": -305 }
+        this.diaDeReferenciaGregoriano = { "dia": 8, "mes": 3, "ano": 305 }
 
         this.hoje = this.GerarDiaDeHoje(this.diaDeReferenciaGregoriano, this.hojeGregoriano)
 
