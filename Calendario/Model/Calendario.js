@@ -55,7 +55,8 @@ class Calendario {
         var meses = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
         var linha = 0
 
-        // Soma os dias de cada mês do dia 22/09/-305 até a data em questão, desconsiderando regra de anos bissextos
+        // Soma os dias de cada mês do dia 22/09/-305 até a data em questão,
+        // desconsiderando regra de anos bissextos
         linha = 1
         var ano = diaDeReferenciaGregoriano.ano + dataGregoriano.ano - 1
         qtdDias += (ano - 1) * 365
@@ -64,9 +65,13 @@ class Calendario {
         console.log(qtdDias)
 
         linha = 2
-        var totalMeses = diaDeReferenciaGregoriano.mes + dataGregoriano.mes // corrigir cálculo do mês
+        var totalMeses = dataGregoriano.mes
         for (var mes = 1; mes < totalMeses; mes++) {
             qtdDias += meses[mes-1]
+        }
+        // Soma os dias de Outubro, Novembro e Dezembro de 305 a.C.
+        if (dataGregoriano.ano > -305) {
+            qtdDias += 31 + 30 + 31
         }
         
         console.log("Linha" + linha)
@@ -133,7 +138,7 @@ class Calendario {
         qtdMeses = Math.floor(qtdDias / 30) + 1
 
         if (qtdMeses > 1) {
-            qtdDias = qtdDias - (qtdMeses * 30)
+            qtdDias = qtdDias - ((qtdMeses - 1) * 30)
         }
 
         // Gera objeto 
