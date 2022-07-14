@@ -22,7 +22,7 @@ function GerarMenuSuperior(calendario) {
     articleMenu.appendChild(CriarElementoHTML(
         "h1", 
         { "id": "titulo" }, 
-        "Calendário"
+        "CALENDÁRIO"
     ))
 
     articleMenu.appendChild(CriarElementoHTML(
