@@ -3,9 +3,9 @@ class Calendario {
         var diaDeHoje = new Date(Date.now())
 
         this.hojeGregoriano = {
-            "dia": 25,  //diaDeHoje.getDate(),
-            "mes": 6,  //diaDeHoje.getMonth() + 1,
-            "ano": 2022 //diaDeHoje.getFullYear()
+            "dia": 1,  //diaDeHoje.getDate(),
+            "mes": 1,  //diaDeHoje.getMonth() + 1,
+            "ano": 1 //diaDeHoje.getFullYear()
         }
 
         this.diaDeReferenciaGregoriano = { "dia": 8, "mes": 3, "ano": 305 }
