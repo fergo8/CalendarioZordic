@@ -85,9 +85,11 @@ function GerarMiniCalendario(calendario) {
     const divMiniCalendario = document.createElement("div")
     divMiniCalendario.setAttribute("class", "col-3 mini-calendario")
 
+    const divLinhaTitulo = document.createElement("div")
     const divLinha1 = document.createElement("div")
     const divLinha2 = document.createElement("div")
     const divLinha3 = document.createElement("div")
+    divLinhaTitulo.setAttribute("class", "row")
     divLinha1.setAttribute("class", "row")
     divLinha2.setAttribute("class", "row")
     divLinha3.setAttribute("class", "row")
@@ -111,21 +113,28 @@ function GerarMiniCalendario(calendario) {
         }
     }
 
-    divMiniCalendario.appendChild(CriarElementoHTML(
+    divLinhaTitulo.appendChild(CriarElementoHTML(
         "div", 
-        { "class": "row mes-ano-selecionado-mini" }, 
+        { "class": "col-12 mes-ano-selecionado-mini" }, 
         "Mês " + calendario.hoje.mes + " de " + calendario.hoje.ano
     ))
 
+    divMiniCalendario.appendChild(divLinhaTitulo)
     divMiniCalendario.appendChild(divLinha1)
     divMiniCalendario.appendChild(divLinha2)
     divMiniCalendario.appendChild(divLinha3)
 
     divPrincipal.appendChild(divMiniCalendario)
+
+    divPrincipal.appendChild(CriarElementoHTML(
+        "div",
+        { "class": "col-1" },
+        ""
+    ))
     
     divPrincipal.appendChild(CriarElementoHTML(
         "div",
-        { "class": "col-9 bloco-notas" },
+        { "class": "col-8 bloco-notas" },
         ""
     ))
 
