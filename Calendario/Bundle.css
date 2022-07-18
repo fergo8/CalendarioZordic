@@ -71,6 +71,7 @@ body {
 .bloco-mini-dia {
     text-align: center;
     font-size: 0.8em;
+    padding: 0px 5px !important;
 }
 .bloco-mini-dia-atual {
     background-color: #d8c2fe;
