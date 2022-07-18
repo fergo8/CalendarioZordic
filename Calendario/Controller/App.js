@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const calendario = new Calendario()
 
     app.appendChild(GerarMenuSuperior(calendario))
-    app.appendChild(GerarCalentario(calendario))
+    app.appendChild(GerarCalendario(calendario))
+    app.appendChild(GerarMiniCalendario(calendario))
 })
 
 function GerarMenuSuperior(calendario) {
@@ -34,7 +35,7 @@ function GerarMenuSuperior(calendario) {
     return articleMenu
 }
 
-function GerarCalentario(calendario) {
+function GerarCalentdario(calendario) {
     const articleCalendario = document.createElement("article")
     articleCalendario.setAttribute("class", "article-border article-calendario")
 
@@ -76,6 +77,48 @@ function GerarCalentario(calendario) {
     ))
 
     return articleCalendario
+}
+
+function GerarMiniCalendario(calendario) {
+    const article = document.createElement("article")
+    article.setAttribute("class", "row")
+
+    const divMiniCalendario = document.createElement("div")
+    divMiniCalendario.setAttribute("class", "col-4")
+
+    const divLinha1 = document.createElement("div")
+    const divLinha2 = document.createElement("div")
+    const divLinha3 = document.createElement("div")
+    divLinha1.setAttribute("class", "row")
+    divLinha2.setAttribute("class", "row")
+    divLinha3.setAttribute("class", "row")
+
+    for (var mes = 0; mes < calendario.diasDoMes.length; mes++) {
+        var prop = { "class": "col bloco-mini-dia" }
+
+        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+            calendario.diasDoMes[mes].atual = true
+            prop.class = "col bloco-mini-dia bloco-mini-dia-atual"
+        }
+        
+        if (calendario.diasDoMes[mes].posicaoCalendario == 1) {
+            divLinha1.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
+        }
+        if (calendario.diasDoMes[mes].posicaoCalendario == 2) {
+            divLinha2.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
+        }
+        if (calendario.diasDoMes[mes].posicaoCalendario == 3) {
+            divLinha3.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
+        }
+    }
+
+    divMiniCalendario.appendChild(divLinha1)
+    divMiniCalendario.appendChild(divLinha2)
+    divMiniCalendario.appendChild(divLinha3)
+
+    article.appendChild(divMiniCalendario)
+
+    return article
 }
 
 function CriarElementoHTML(tag, prop, texto) {
