@@ -35,7 +35,7 @@ function GerarMenuSuperior(calendario) {
     return articleMenu
 }
 
-function GerarCalentdario(calendario) {
+function GerarCalendario(calendario) {
     const articleCalendario = document.createElement("article")
     articleCalendario.setAttribute("class", "article-border article-calendario")
 
@@ -117,6 +117,12 @@ function GerarMiniCalendario(calendario) {
     divMiniCalendario.appendChild(divLinha3)
 
     article.appendChild(divMiniCalendario)
+    
+    article.appendChild(CriarElementoHTML(
+        "div",
+        { "class": "col-8 bloco-notas" },
+        ""
+    ))
 
     return article
 }
