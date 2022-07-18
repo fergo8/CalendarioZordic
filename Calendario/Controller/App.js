@@ -77,7 +77,10 @@ function GerarCalendario(calendario) {
 
 function GerarMiniCalendario(calendario) {
     const article = document.createElement("article")
-    article.setAttribute("class", "row")
+    article.setAttribute("class", "article-mini-calendario")
+
+    const divPrincipal = document.createElement("div")
+    divPrincipal.setAttribute("class", "row")
 
     const divMiniCalendario = document.createElement("div")
     divMiniCalendario.setAttribute("class", "col-4")
@@ -118,13 +121,15 @@ function GerarMiniCalendario(calendario) {
     divMiniCalendario.appendChild(divLinha2)
     divMiniCalendario.appendChild(divLinha3)
 
-    article.appendChild(divMiniCalendario)
+    divPrincipal.appendChild(divMiniCalendario)
     
-    article.appendChild(CriarElementoHTML(
+    divPrincipal.appendChild(CriarElementoHTML(
         "div",
         { "class": "col-8 bloco-notas" },
         ""
     ))
+
+    article.appendChild(divPrincipal)
 
     return article
 }
