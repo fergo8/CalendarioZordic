@@ -49,3 +49,12 @@ body {
 .bloco-dia-atual {
     background-color: #d8c2fe;
 }
+
+/* ===== Mini-calendário ===== */
+.bloco-mini-dia {
+    text-align: center;
+    font-size: 0.5em;
+}
+.bloco-mini-dia-atual {
+    background-color: #d8c2fe;
+}

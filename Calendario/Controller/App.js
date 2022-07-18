@@ -70,12 +70,8 @@ function GerarCalendario(calendario) {
     articleCalendario.appendChild(divLinha3)
 
     // Teste data atual
-    articleCalendario.appendChild(CriarElementoHTML(
-        "p",
-        { "class": "diaDeHoje" },
-        calendario.hoje.dia + "/" + calendario.hoje.mes + "/" + calendario.hoje.ano
-    ))
-
+    console.log("Hoje: " + calendario.hoje.dia + "/" + calendario.hoje.mes + "/" + calendario.hoje.ano)
+    
     return articleCalendario
 }
 
@@ -111,6 +107,12 @@ function GerarMiniCalendario(calendario) {
             divLinha3.appendChild(CriarElementoHTML("div", prop, calendario.diasDoMes[mes].dia))
         }
     }
+
+    divMiniCalendario.appendChild(CriarElementoHTML(
+        "div", 
+        { "class": "row mes-ano-selecionado" }, 
+        "Mês " + calendario.hoje.mes + " de " + calendario.hoje.ano
+    ))
 
     divMiniCalendario.appendChild(divLinha1)
     divMiniCalendario.appendChild(divLinha2)
