@@ -80,7 +80,6 @@ body {
 }
 
 .bloco-notas {
-    border: 3px solid #d8c2fe;
+    border: 2px solid #d8c2fe;
     border-radius: 15px;
-    margin: 0px 25px;
 }
