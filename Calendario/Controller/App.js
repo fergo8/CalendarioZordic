@@ -27,9 +27,27 @@ function GerarMenuSuperior(calendario) {
     ))
 
     articleMenu.appendChild(CriarElementoHTML(
+        "i", 
+        { 
+            "class": "fa-solid fa-angle-left",
+            "onclick": "MudarParaMesAnterior(" + calendario.hoje + ")"
+        }, 
+        ""
+    ))
+
+    articleMenu.appendChild(CriarElementoHTML(
         "span", 
         { "class": "mes-ano-selecionado" }, 
         "Mês " + calendario.hoje.mes + " de " + calendario.hoje.ano
+    ))
+
+    articleMenu.appendChild(CriarElementoHTML(
+        "i", 
+        { 
+            "class": "fa-solid fa-angle-right",
+            "onclick": "MudarParaMesProximo(" + calendario.hoje + ")" 
+        }, 
+        ""
     ))
 
     return articleMenu
@@ -158,4 +176,12 @@ function CriarElementoHTML(tag, prop, texto) {
 
     elemento.appendChild(document.createTextNode(texto))
     return elemento
+}
+
+function MudarParaMesAnterior(data) {
+    console.log("MudarParaMesAnterior")
+}
+
+function MudarParaMesProximo(data) {
+    console.log("MudarParaMesProximo")
 }
