@@ -22,10 +22,12 @@ body {
 
 .mes-ano-selecionado {
     font-weight: bold;
+    padding: 10px 0px;
 }
 
 .seta {
-    padding: 0px 10px;
+    padding: 10px 10px;
+    border-radius: 15px;
 }
 .seta:hover {
     background-color: lightgray;

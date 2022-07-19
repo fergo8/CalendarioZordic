@@ -30,7 +30,7 @@ function GerarMenuSuperior(calendario) {
         "i", 
         { 
             "class": "fa-solid fa-angle-left seta",
-            "onclick": "MudarParaMesAnterior(" + calendario.hoje + ")"
+            "onclick": "MudarParaMesAnterior(" + calendario.hoje.dia + ", " + calendario.hoje.mes + ", " + calendario.hoje.ano + ")"
         }, 
         ""
     ))
@@ -45,7 +45,7 @@ function GerarMenuSuperior(calendario) {
         "i", 
         { 
             "class": "fa-solid fa-angle-right seta",
-            "onclick": "MudarParaMesProximo(" + calendario.hoje + ")" 
+            "onclick": "MudarParaMesProximo(" + calendario.hoje.dia + ", " + calendario.hoje.mes + ", " + calendario.hoje.ano + ")" 
         }, 
         ""
     ))
@@ -181,10 +181,10 @@ function CriarElementoHTML(tag, prop, texto) {
     return elemento
 }
 
-function MudarParaMesAnterior(data) {
+function MudarParaMesAnterior(dia, mes, ano) {
     console.log("MudarParaMesAnterior")
 }
 
-function MudarParaMesProximo(data) {
+function MudarParaMesProximo(dia, mes, ano) {
     console.log("MudarParaMesProximo")
 }
