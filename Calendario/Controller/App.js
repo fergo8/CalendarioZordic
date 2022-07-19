@@ -29,7 +29,7 @@ function GerarMenuSuperior(calendario) {
     articleMenu.appendChild(CriarElementoHTML(
         "i", 
         { 
-            "class": "fa-solid fa-angle-left",
+            "class": "fa-solid fa-angle-left seta",
             "onclick": "MudarParaMesAnterior(" + calendario.hoje + ")"
         }, 
         ""
@@ -44,7 +44,7 @@ function GerarMenuSuperior(calendario) {
     articleMenu.appendChild(CriarElementoHTML(
         "i", 
         { 
-            "class": "fa-solid fa-angle-right",
+            "class": "fa-solid fa-angle-right seta",
             "onclick": "MudarParaMesProximo(" + calendario.hoje + ")" 
         }, 
         ""
@@ -172,6 +172,9 @@ function CriarElementoHTML(tag, prop, texto) {
     }
     if (prop.src != null) {
         elemento.setAttribute("src", prop.src)
+    }
+    if (prop.onclick != null) {
+        elemento.setAttribute("onclick", prop.onclick)
     }
 
     elemento.appendChild(document.createTextNode(texto))
