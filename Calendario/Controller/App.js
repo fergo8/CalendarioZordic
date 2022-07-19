@@ -186,5 +186,25 @@ function MudarParaMesAnterior(dia, mes, ano) {
 }
 
 function MudarParaMesProximo(dia, mes, ano) {
-    console.log("MudarParaMesProximo")
+    var app = document.getElementById("app")
+    var contador = parseInt(document.getElementById("contador"))
+    app.innerHTML = ""
+    
+    contador += 1
+
+    document.getElementById("contador").innerHTML = contador
+
+    mes += contador
+
+    if (mes > 13) {
+        mes -= 13
+        ano += 1
+    }
+
+    console.log("teste próximo mês")
+    const calendario = new Calendario(new Date(ano, mes, dia))
+
+    app.appendChild(GerarMenuSuperior(calendario))
+    app.appendChild(GerarCalendario(calendario))
+    app.appendChild(GerarMiniCalendario(calendario))
 }
