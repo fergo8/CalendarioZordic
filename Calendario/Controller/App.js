@@ -187,20 +187,23 @@ function MudarParaMesAnterior(dia, mes, ano) {
 
 function MudarParaMesProximo(dia, mes, ano) {
     var app = document.getElementById("app")
-    var contador = parseInt(document.getElementById("contador"))
+    var contador = parseInt(document.getElementById("contador").innerHTML)
     app.innerHTML = ""
     
+    console.log(contador)
     contador += 1
-
+    console.log(contador)
+    
     document.getElementById("contador").innerHTML = contador
-
+    
     mes += contador
-
+    
     if (mes > 13) {
         mes -= 13
         ano += 1
     }
-
+    
+    console.log(contador)
     console.log("teste próximo mês")
     const calendario = new Calendario(new Date(ano, mes, dia))
 
