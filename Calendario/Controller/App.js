@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     var app = document.getElementById("app")
-    const calendario = new Calendario()
+    const calendario = new Calendario(new Date(Date.now()))
 
     app.appendChild(GerarMenuSuperior(calendario))
     app.appendChild(GerarCalendario(calendario))

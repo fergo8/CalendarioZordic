@@ -1,7 +1,5 @@
 class Calendario {
-    constructor() {
-        var diaDeHoje = new Date(Date.now())
-
+    constructor(diaDeHoje) {
         this.hojeGregoriano = {
             "dia": diaDeHoje.getDate(),
             "mes": diaDeHoje.getMonth() + 1,
