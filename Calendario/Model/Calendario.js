@@ -152,6 +152,7 @@ class Calendario {
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         
+        console.log(hojeGregoriano.dia + "/" + hojeGregoriano.mes + "/" + hojeGregoriano.ano)
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
         hoje = this.CalcularDiaDoCalendarioNovo(qtdDias, diaDeReferenciaGregoriano)

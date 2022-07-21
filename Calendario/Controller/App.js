@@ -185,7 +185,11 @@ function MudarParaMesAnterior(dia, mes, ano) {
     console.log("MudarParaMesAnterior")
 }
 
-function MudarParaMesProximo(dia, mes, ano) {
+function MudarParaMesProximo(d, m, a) {
+    var dia = parseInt(d)
+    var mes = parseInt(m)
+    var ano = parseInt(a)
+
     var app = document.getElementById("app")
     var contador = parseInt(document.getElementById("contador").innerHTML)
     app.innerHTML = ""
