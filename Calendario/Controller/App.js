@@ -186,9 +186,9 @@ function MudarParaMesAnterior(dia, mes, ano) {
 }
 
 function MudarParaMesProximo() {
-    var dia = Date.now().getDate()
-    var mes = Date.now().getMonth() + 1
-    var ano = Date.now().getFullYear()
+    var dia = new Date(Date.now()).getDate()
+    var mes = new Date(Date.now()).getMonth() + 1
+    var ano = new Date(Date.now()).getFullYear()
 
     var app = document.getElementById("app")
     var contador = parseInt(document.getElementById("contador").innerHTML)
