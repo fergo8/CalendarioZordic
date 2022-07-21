@@ -50,6 +50,8 @@ function GerarMenuSuperior(calendario) {
         ""
     ))
 
+    articleMenu.appendChild(GerarConversor())
+
     return articleMenu
 }
 
@@ -211,4 +213,10 @@ function MudarMes(valor) {
     app.appendChild(GerarMenuSuperior(calendario))
     app.appendChild(GerarCalendario(calendario))
     app.appendChild(GerarMiniCalendario(calendario))
+}
+
+function GerarConversor() {
+    var conversor = new Conversor()
+
+    return conversor.layout
 }
