@@ -186,22 +186,30 @@ function MudarParaMesAnterior(dia, mes, ano) {
 }
 
 function MudarParaMesProximo() {
+    var dia = Date.now().getDate()
+    var mes = Date.now().getMonth() + 1
+    var ano = Date.now().getFullYear()
+
     var app = document.getElementById("app")
     var contador = parseInt(document.getElementById("contador").innerHTML)
     app.innerHTML = ""
     
+    console.log("Linha1: " + dia + "/" + mes + "/" + ano)
     contador += 1
     
     document.getElementById("contador").innerHTML = contador
     
     mes += contador
+    console.log("Linha2: " + dia + "/" + mes + "/" + ano)
 
     if (mes > 13) {
         mes -= 13
         ano += 1
     }
+    console.log("Linha3: " + dia + "/" + mes + "/" + ano)
     
-    const calendario = new Calendario(new Date(Date.now()))
+    const calendario = new Calendario(new Date(ano, mes, dia))
+    console.log("Linha4: " + calendario.hoje.dia + "/" + calendario.hoje.mes + "/" + calendario.hoje.ano)
 
     app.appendChild(GerarMenuSuperior(calendario))
     app.appendChild(GerarCalendario(calendario))
