@@ -30,7 +30,7 @@ function GerarMenuSuperior(calendario) {
         "i", 
         { 
             "class": "fa-solid fa-angle-left seta",
-            "onclick": "MudarParaMesAnterior(" + calendario.hoje.dia + ", " + calendario.hoje.mes + ", " + calendario.hoje.ano + ")"
+            "onclick": "MudarMes(-1)"
         }, 
         ""
     ))
@@ -45,7 +45,7 @@ function GerarMenuSuperior(calendario) {
         "i", 
         { 
             "class": "fa-solid fa-angle-right seta",
-            "onclick": "MudarParaMesProximo()" 
+            "onclick": "MudarMes(1)" 
         }, 
         ""
     ))
@@ -181,35 +181,32 @@ function CriarElementoHTML(tag, prop, texto) {
     return elemento
 }
 
-function MudarParaMesAnterior(dia, mes, ano) {
-    console.log("MudarParaMesAnterior")
-}
-
-function MudarParaMesProximo() {
+function MudarMes(valor) {
     var dia = new Date(Date.now()).getDate()
-    var mes = new Date(Date.now()).getMonth() + 1
+    var mes = new Date(Date.now()).getMonth()
     var ano = new Date(Date.now()).getFullYear()
 
     var app = document.getElementById("app")
     var contador = parseInt(document.getElementById("contador").innerHTML)
     app.innerHTML = ""
     
-    console.log("Linha1: " + dia + "/" + mes + "/" + ano)
-    contador += 1
+    contador += valor
     
     document.getElementById("contador").innerHTML = contador
     
     mes += contador
-    console.log("Linha2: " + dia + "/" + mes + "/" + ano)
 
-    if (mes > 13) {
-        mes -= 13
+    if (mes > 11) {
+        mes -= 11
         ano += 1
     }
-    console.log("Linha3: " + dia + "/" + mes + "/" + ano)
+
+    if (mes < 0) {
+        mes += 11
+        ano -= 1
+    }
     
     const calendario = new Calendario(new Date(ano, mes, dia))
-    console.log("Linha4: " + calendario.hoje.dia + "/" + calendario.hoje.mes + "/" + calendario.hoje.ano)
 
     app.appendChild(GerarMenuSuperior(calendario))
     app.appendChild(GerarCalendario(calendario))
