@@ -93,3 +93,8 @@ body {
     border: 2px solid #d8c2fe;
     border-radius: 15px;
 }
+
+/* ===== Conversor de datas ===== */
+.conversor {
+    max-width: 100px;
+}
