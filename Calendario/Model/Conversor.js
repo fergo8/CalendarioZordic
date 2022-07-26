@@ -60,7 +60,7 @@ class Conversor {
     }
 
     ConverterData(dataGregoriano, dataCalendarioNovo) {
-        console.log(dataGregoriano)
-        console.log(dataCalendarioNovo)
+        console.log(dataGregoriano.innerText)
+        console.log(dataCalendarioNovo.innerText)
     }
 }
