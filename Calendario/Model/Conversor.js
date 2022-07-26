@@ -7,6 +7,13 @@ class Conversor {
         const divConversor = document.createElement("div")
         divConversor.setAttribute("class", "conversor")
 
+        const div1 = document.createElement("div")
+        const div2 = document.createElement("div")
+        const div3 = document.createElement("div")
+        div1.setAttribute("class", "conversor-div1")
+        div2.setAttribute("class", "conversor-div2")
+        div3.setAttribute("class", "conversor-div3")
+
         const formConversor = document.createElement("form")
         formConversor.setAttribute("class", "conversor-form")
 
@@ -34,11 +41,17 @@ class Conversor {
         submit.setAttribute("type", "submit")
         submit.innerText = "Converter"
 
-        formConversor.appendChild(labelGregoriano)
-        formConversor.appendChild(labelCalendario)
-        formConversor.appendChild(inputGregoriano)
-        formConversor.appendChild(submit)
-        formConversor.appendChild(inputCalendario)
+        div1.appendChild(labelGregoriano)
+        div1.appendChild(inputGregoriano)
+
+        div2.appendChild(submit)
+
+        div3.appendChild(labelCalendario)
+        div3.appendChild(inputCalendario)
+
+        formConversor.appendChild(div1)
+        formConversor.appendChild(div2)
+        formConversor.appendChild(div3)
 
         divConversor.appendChild(formConversor)
 

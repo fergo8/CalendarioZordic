@@ -104,3 +104,9 @@ body {
     width: 30%;
     display: inline-block;
 }
+.conversor-div1, .conversor-div3 {
+    width: 35%;
+}
+.conversor-div2 {
+    width: 30%;
+}
