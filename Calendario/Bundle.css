@@ -112,6 +112,7 @@ body {
     width: 30%;
     display: inline-block;
 }
-.conversor-div2 button {
-    margin: auto;
+#btn-converter {
+    margin: 0px 50%;
+    background-color: aquamarine !important;
 }

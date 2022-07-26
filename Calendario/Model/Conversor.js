@@ -36,7 +36,7 @@ class Conversor {
         inputCalendario.setAttribute("type", "date")
         
         const submit = document.createElement("button")
-        submit.setAttribute("class", "btn btn-secondary conversor-submit")
+        submit.setAttribute("class", "btn btn-secondary btn-sm conversor-submit")
         submit.setAttribute("id", "btn-converter")
         submit.setAttribute("type", "submit")
         submit.innerText = "Converter"
