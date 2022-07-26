@@ -14,7 +14,7 @@ function GerarMenuSuperior(calendario) {
     const menu = document.createElement("div")
     menu.setAttribute("class", "menu-superior")
     
-    articleMenu.appendChild(CriarElementoHTML(
+    menu.appendChild(CriarElementoHTML(
         "img", 
         {
             "id": "logo",
@@ -23,13 +23,13 @@ function GerarMenuSuperior(calendario) {
         ""
     ))
 
-    articleMenu.appendChild(CriarElementoHTML(
+    menu.appendChild(CriarElementoHTML(
         "h1", 
         { "id": "titulo" }, 
         "CALENDÁRIO"
     ))
 
-    articleMenu.appendChild(CriarElementoHTML(
+    menu.appendChild(CriarElementoHTML(
         "i", 
         { 
             "class": "fa-solid fa-angle-left seta",
@@ -38,13 +38,13 @@ function GerarMenuSuperior(calendario) {
         ""
     ))
 
-    articleMenu.appendChild(CriarElementoHTML(
+    menu.appendChild(CriarElementoHTML(
         "span", 
         { "class": "mes-ano-selecionado" }, 
         "Mês " + calendario.hoje.mes + " de " + calendario.hoje.ano
     ))
 
-    articleMenu.appendChild(CriarElementoHTML(
+    menu.appendChild(CriarElementoHTML(
         "i", 
         { 
             "class": "fa-solid fa-angle-right seta",
