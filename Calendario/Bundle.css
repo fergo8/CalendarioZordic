@@ -106,7 +106,9 @@ body {
 }
 .conversor-div1, .conversor-div3 {
     width: 35%;
+    display: inline-block;
 }
 .conversor-div2 {
     width: 30%;
+    display: inline-block;
 }
