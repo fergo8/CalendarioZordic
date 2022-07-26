@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 function GerarMenuSuperior(calendario) {
     const articleMenu = document.createElement("article")
     articleMenu.setAttribute("class", "article-menu")
-
+    
+    const menu = document.createElement("div")
+    menu.setAttribute("class", "menu-superior")
+    
     articleMenu.appendChild(CriarElementoHTML(
         "img", 
         {
@@ -50,6 +53,7 @@ function GerarMenuSuperior(calendario) {
         ""
     ))
 
+    articleMenu.appendChild(menu)
     articleMenu.appendChild(GerarConversor())
 
     return articleMenu

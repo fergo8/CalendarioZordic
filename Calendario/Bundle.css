@@ -7,6 +7,11 @@ body {
     padding: 15px 5% 15px 5%;
 }
 
+.menu-superior {
+    width: 70%;
+    display: inline-block;
+}
+
 #logo {
     margin-top: 10px;
     max-height: 40px;
@@ -96,5 +101,6 @@ body {
 
 /* ===== Conversor de datas ===== */
 .conversor {
-    max-width: 100px;
+    width: 30%;
+    display: inline-block;
 }

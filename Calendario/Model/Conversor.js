@@ -21,15 +21,18 @@ class Conversor {
         const inputGregoriano = document.createElement("input")
         inputGregoriano.setAttribute("class", "conversor-input")
         inputGregoriano.setAttribute("id", "data-gregoriano")
+        inputGregoriano.setAttribute("type", "date")
         
         const inputCalendario = document.createElement("input")
         inputCalendario.setAttribute("class", "conversor-input")
         inputCalendario.setAttribute("id", "data-calendario-novo")
+        inputCalendario.setAttribute("type", "date")
         
-        const submit = document.createElement("buttom")
-        submit.setAttribute("class", "conversor-submit")
-        submit.setAttribute("id", "btm-converter")
+        const submit = document.createElement("button")
+        submit.setAttribute("class", "btn btn-secondary conversor-submit")
+        submit.setAttribute("id", "btn-converter")
         submit.setAttribute("type", "submit")
+        submit.innerText = "Converter"
 
         formConversor.appendChild(labelGregoriano)
         formConversor.appendChild(labelCalendario)
