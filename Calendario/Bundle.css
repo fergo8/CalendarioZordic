@@ -111,8 +111,9 @@ body {
 .conversor-div2 {
     width: 30%;
     display: inline-block;
+    text-align: center;
 }
 #btn-converter {
-    margin: 0px 50%;
-    background-color: aquamarine !important;
+    background-color: #02a388 !important;
+    border-color: #02a388 !important;
 }
