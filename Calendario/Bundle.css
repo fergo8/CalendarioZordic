@@ -111,5 +111,7 @@ body {
 .conversor-div2 {
     width: 30%;
     display: inline-block;
+}
+.conversor-div2 button {
     margin: auto;
 }
