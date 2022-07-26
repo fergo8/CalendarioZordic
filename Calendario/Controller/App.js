@@ -224,3 +224,11 @@ function GerarConversor() {
 
     return conversor.layout
 }
+
+function ConverterData() {
+    var conversor = new Conversor()
+    var dataGregoriano = document.getElementById("data-gregoriano")
+    var dataCalendarioNovo = document.getElementById("data-calendario-novo")
+    
+    return conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
+}

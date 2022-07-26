@@ -38,7 +38,8 @@ class Conversor {
         const submit = document.createElement("button")
         submit.setAttribute("class", "btn btn-secondary btn-sm conversor-submit")
         submit.setAttribute("id", "btn-converter")
-        submit.setAttribute("type", "submit")
+        submit.setAttribute("type", "button")
+        submit.setAttribute("onclick", "ConverterData()")
         submit.innerText = "Converter"
 
         div1.appendChild(labelGregoriano)
@@ -56,5 +57,10 @@ class Conversor {
         divConversor.appendChild(formConversor)
 
         return divConversor
+    }
+
+    ConverterData(dataGregoriano, dataCalendarioNovo) {
+        console.log(dataGregoriano)
+        console.log(dataCalendarioNovo)
     }
 }
