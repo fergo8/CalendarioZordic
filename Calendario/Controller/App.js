@@ -221,7 +221,6 @@ function MudarMes(valor) {
 
 function GerarConversor() {
     var conversor = new Conversor()
-
     return conversor.layout
 }
 
@@ -230,5 +229,9 @@ function ConverterData() {
     var dataGregoriano = document.getElementById("data-gregoriano")
     var dataCalendarioNovo = document.getElementById("data-calendario-novo")
     
-    return conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
+    var data = conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
+
+    if (dataGregoriano.value != "") {
+        dataCalendarioNovo.value = data.dia.toString() + data.mes.toString() + data.ano.toString()
+    }
 }
