@@ -72,7 +72,7 @@ class Conversor {
             var hojeGregoriano = { "dia": dataArray[2], "mes": dataArray[1], "ano": dataArray[0] }
             var qtdDias = calendario.CalcularQuantidadeDeDias(calendario.diaDeReferenciaGregoriano, hojeGregoriano)
     
-            hoje = calendario.CalcularDiaDoCalendarioNovo(qtdDias, diaDeReferenciaGregoriano)
+            hoje = calendario.CalcularDiaDoCalendarioNovo(qtdDias, calendario.diaDeReferenciaGregoriano)
         }
 
         return hoje
