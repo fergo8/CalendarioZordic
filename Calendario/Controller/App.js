@@ -231,6 +231,7 @@ function ConverterData() {
     
     var data = conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
 
+    console.log(data)
     if (dataGregoriano.value != "") {
         dataCalendarioNovo.value = data.dia.toString() + data.mes.toString() + data.ano.toString()
     }

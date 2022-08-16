@@ -68,7 +68,7 @@ class Conversor {
         if (dataGregoriano.value != "") {
             var dataArray = dataGregoriano.value.split("-")
             
-            const calendario = new Calendario(new Date(dataArray[0], dataArray[1], dataArray[2]))
+            const calendario = new Calendario(new Date(dataArray[0], dataArray[1]-1, dataArray[2]))
             
             hoje = calendario.hoje
         }
