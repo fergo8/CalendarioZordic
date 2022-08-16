@@ -233,6 +233,6 @@ function ConverterData() {
 
     console.log(data)
     if (dataGregoriano.value != "") {
-        dataCalendarioNovo.value = data.dia.toString() + data.mes.toString() + data.ano.toString()
+        dataCalendarioNovo.value = data.ano.toString() + "-" + data.mes.toString() + "-" + data.dia.toString()
     }
 }
