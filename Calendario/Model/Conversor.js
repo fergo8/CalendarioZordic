@@ -63,16 +63,14 @@ class Conversor {
         console.log(dataGregoriano.value)
         console.log(dataCalendarioNovo.value)
 
-        const calendario = new Calendario(new Date(Date.now()))
-
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
         
         if (dataGregoriano.value != "") {
             var dataArray = dataGregoriano.value.split("-")
-            var hojeGregoriano = { "dia": dataArray[2], "mes": dataArray[1], "ano": dataArray[0] }
-            var qtdDias = calendario.CalcularQuantidadeDeDias(calendario.diaDeReferenciaGregoriano, hojeGregoriano)
-    
-            hoje = calendario.CalcularDiaDoCalendarioNovo(qtdDias, calendario.diaDeReferenciaGregoriano)
+            
+            const calendario = new Calendario(new Date(dataArray[0], dataArray[1], dataArray[2]))
+            
+            hoje = calendario.hoje
         }
 
         return hoje
