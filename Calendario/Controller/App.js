@@ -237,7 +237,7 @@ function ConverterData() {
     }
 }
 
-function AjustarFormatoData() {
+function AjustarFormatoData(data) {
     var ano = data.ano.toString()
     var mes = data.mes.toString()
     var dia = data.dia.toString()
