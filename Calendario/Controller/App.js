@@ -233,6 +233,19 @@ function ConverterData() {
 
     console.log(data)
     if (dataGregoriano.value != "") {
-        dataCalendarioNovo.value = data.ano.toString() + "-" + data.mes.toString() + "-" + data.dia.toString()
+        dataCalendarioNovo.value = AjustarFormatoData(data)
     }
+}
+
+function AjustarFormatoData() {
+    var ano = data.ano.toString()
+    var mes = data.mes.toString()
+    var dia = data.dia.toString()
+
+    if(mes.length < 2)
+        mes = "0" + mes
+    if(dia.length < 2)
+        dia = "0" + dia
+
+    return ano + "-" + mes + "-" + dia
 }
