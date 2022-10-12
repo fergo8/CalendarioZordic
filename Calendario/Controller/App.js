@@ -70,7 +70,16 @@ function GerarCalendario(calendario) {
     divLinha2.setAttribute("class", "row")
     divLinha3.setAttribute("class", "row")
 
-    for (var mes = 0; mes < calendario.diasDoMes.length; mes++) {
+    var diasDoMes = 0
+
+    if (calendario.hoje.mes == 13) {
+        diasDoMes = calendario.indicaBissexto ? 6 : 5
+    }
+    else {
+        diasDoMes = calendario.diasDoMes.length
+    }
+
+    for (var mes = 0; mes < diasDoMes; mes++) {
         var prop = { "class": "col bloco-dia" }
 
         if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {

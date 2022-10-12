@@ -10,6 +10,8 @@ class Calendario {
 
         this.hoje = this.GerarDiaDeHoje(this.diaDeReferenciaGregoriano, this.hojeGregoriano)
 
+        this.indicaBissexto = this.EhAnoBissexto(this.hoje.ano)
+
         this.diasDoMes = [
             { "dia": 1, "atual": false, "posicaoCalendario": 1 },
             { "dia": 2, "atual": false, "posicaoCalendario": 1 },
@@ -41,6 +43,23 @@ class Calendario {
             { "dia": 28, "atual": false, "posicaoCalendario": 3 },
             { "dia": 29, "atual": false, "posicaoCalendario": 3 },
             { "dia": 30, "atual": false, "posicaoCalendario": 3 }
+        ]
+
+        this.diasSemMes = [
+            { "dia": 1, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 2, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 3, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 4, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 5, "atual": false, "posicaoCalendario": 1 }
+        ]
+
+        this.diasSemMesBissexto = [
+            { "dia": 1, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 2, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 3, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 4, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 5, "atual": false, "posicaoCalendario": 1 },
+            { "dia": 6, "atual": false, "posicaoCalendario": 1 }
         ]
     }
 
