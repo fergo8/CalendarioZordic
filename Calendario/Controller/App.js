@@ -225,12 +225,12 @@ function MudarMes(valor) {
     
     mes += contador
 
-    if (mes > 13) {
-        mes -= 11
+    while (mes > 13) {
+        mes -= 13
         ano += 1
     }
 
-    if (mes < 0) {
+    while (mes < 1) {
         mes += 13
         ano -= 1
     }
