@@ -99,7 +99,7 @@ class Calendario {
         console.log("Linha" + linha)
         console.log(qtdDias)
 
-        return qtdDias + 16
+        return qtdDias + 18
     }
     
     CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
