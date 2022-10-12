@@ -82,9 +82,7 @@ function GerarCalendario(calendario) {
     for (var mes = 0; mes < diasDoMes; mes++) {
         var prop = { "class": "col bloco-dia" }
 
-        if (calendario.diasDoMes[mes].ano == calendario.hoje.ano &&
-            calendario.diasDoMes[mes].mes == calendario.hoje.mes &&
-            calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
             calendario.diasDoMes[mes].atual = true
             prop.class = "col bloco-dia bloco-dia-atual"
         }
@@ -141,9 +139,7 @@ function GerarMiniCalendario(calendario) {
     for (var mes = 0; mes < diasDoMes; mes++) {
         var prop = { "class": "col bloco-mini-dia" }
 
-        if (calendario.diasDoMes[mes].ano == calendario.hoje.ano &&
-            calendario.diasDoMes[mes].mes == calendario.hoje.mes &&
-            calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
             calendario.diasDoMes[mes].atual = true
             prop.class = "col bloco-mini-dia bloco-mini-dia-atual"
         }
