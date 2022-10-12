@@ -128,11 +128,11 @@ class Calendario {
             qtdDias = qtdDias - (diasExtras * 1461)
         }
 
-        //if (qtdDias > 365) {
-        //    var anosAdicionais = Math.floor(qtdDias / 365)
-        //    qtdAnos += anosAdicionais
-        //    qtdDias = qtdDias - (anosAdicionais * 365)
-        //}
+        if (qtdDias > 365) {
+            var anosAdicionais = Math.floor(qtdDias / 365)
+            qtdAnos += anosAdicionais
+            qtdDias = qtdDias - (anosAdicionais * 365)
+        }
 
         // Calcula meses do calendário novo
         qtdMeses = Math.floor(qtdDias / 30) + 1
