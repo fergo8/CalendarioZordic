@@ -82,7 +82,9 @@ function GerarCalendario(calendario) {
     for (var mes = 0; mes < diasDoMes; mes++) {
         var prop = { "class": "col bloco-dia" }
 
-        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+        if (calendario.diasDoMes[mes].ano == calendario.hoje.ano &&
+            calendario.diasDoMes[mes].mes == calendario.hoje.mes &&
+            calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
             calendario.diasDoMes[mes].atual = true
             prop.class = "col bloco-dia bloco-dia-atual"
         }
@@ -127,10 +129,21 @@ function GerarMiniCalendario(calendario) {
     divLinha2.setAttribute("class", "row")
     divLinha3.setAttribute("class", "row")
 
-    for (var mes = 0; mes < calendario.diasDoMes.length; mes++) {
+    var diasDoMes = 0
+
+    if (calendario.hoje.mes == 13) {
+        diasDoMes = calendario.indicaBissexto ? 6 : 5
+    }
+    else {
+        diasDoMes = calendario.diasDoMes.length
+    }
+
+    for (var mes = 0; mes < diasDoMes; mes++) {
         var prop = { "class": "col bloco-mini-dia" }
 
-        if (calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
+        if (calendario.diasDoMes[mes].ano == calendario.hoje.ano &&
+            calendario.diasDoMes[mes].mes == calendario.hoje.mes &&
+            calendario.diasDoMes[mes].dia == calendario.hoje.dia) {
             calendario.diasDoMes[mes].atual = true
             prop.class = "col bloco-mini-dia bloco-mini-dia-atual"
         }
@@ -197,9 +210,10 @@ function CriarElementoHTML(tag, prop, texto) {
 }
 
 function MudarMes(valor) {
-    var dia = new Date(Date.now()).getDate()
-    var mes = new Date(Date.now()).getMonth()
-    var ano = new Date(Date.now()).getFullYear()
+    const calendario = new Calendario(new Date(Date.now()))
+    var dia = calendario.hoje.dia
+    var mes = calendario.hoje.mes
+    var ano = calendario.hoje.ano
 
     var app = document.getElementById("app")
     var contador = parseInt(document.getElementById("contador").innerHTML)
@@ -211,18 +225,22 @@ function MudarMes(valor) {
     
     mes += contador
 
-    if (mes > 11) {
+    if (mes > 13) {
         mes -= 11
         ano += 1
     }
 
     if (mes < 0) {
-        mes += 11
+        mes += 13
         ano -= 1
     }
-    
-    const calendario = new Calendario(new Date(ano, mes, dia))
 
+    calendario.hoje.dia = dia
+    calendario.hoje.mes = mes
+    calendario.hoje.ano = ano
+
+    calendario.indicaBissexto = calendario.EhAnoBissexto(ano)
+    
     app.appendChild(GerarMenuSuperior(calendario))
     app.appendChild(GerarCalendario(calendario))
     app.appendChild(GerarMiniCalendario(calendario))

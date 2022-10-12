@@ -44,23 +44,6 @@ class Calendario {
             { "dia": 29, "atual": false, "posicaoCalendario": 3 },
             { "dia": 30, "atual": false, "posicaoCalendario": 3 }
         ]
-
-        this.diasSemMes = [
-            { "dia": 1, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 2, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 3, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 4, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 5, "atual": false, "posicaoCalendario": 1 }
-        ]
-
-        this.diasSemMesBissexto = [
-            { "dia": 1, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 2, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 3, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 4, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 5, "atual": false, "posicaoCalendario": 1 },
-            { "dia": 6, "atual": false, "posicaoCalendario": 1 }
-        ]
     }
 
     EhAnoBissexto(ano) {
@@ -145,11 +128,11 @@ class Calendario {
             qtdDias = qtdDias - (diasExtras * 1461)
         }
 
-        if (qtdDias > 365) {
-            var anosAdicionais = Math.floor(qtdDias / 365)
-            qtdAnos += anosAdicionais
-            qtdDias = qtdDias - (anosAdicionais * 365)
-        }
+        //if (qtdDias > 365) {
+        //    var anosAdicionais = Math.floor(qtdDias / 365)
+        //    qtdAnos += anosAdicionais
+        //    qtdDias = qtdDias - (anosAdicionais * 365)
+        //}
 
         // Calcula meses do calendário novo
         qtdMeses = Math.floor(qtdDias / 30) + 1
