@@ -53,6 +53,15 @@ function GerarMenuSuperior(calendario) {
         ""
     ))
 
+    menu.appendChild(CriarElementoHTML(
+        "button", 
+        { 
+            "class": "btn btn-light",
+            "onclick": "MudarMes(0)" 
+        }, 
+        "Hoje"
+    ))
+
     articleMenu.appendChild(menu)
     articleMenu.appendChild(GerarConversor())
 
@@ -215,7 +224,12 @@ function MudarMes(valor) {
     var contador = parseInt(document.getElementById("contador").innerHTML)
     app.innerHTML = ""
     
-    contador += valor
+    if (valor == 0) {
+        contador = valor
+    }
+    else {
+        contador += valor
+    }
     
     document.getElementById("contador").innerHTML = contador
     
