@@ -109,16 +109,9 @@ class Calendario {
 
         // Calcula quantidade de dias extras pelos anos bissextos
         var diasExtras = Math.floor(ano / 4)
-        console.log("diasExtras: " + diasExtras)
-
         qtdDias = qtdDias + ((ano - 1) * 365)
-        console.log("qtdDias1: " + qtdDias)
-
         qtdDias = qtdDias + ((mes - 1) * 30)
-        console.log("qtdDias2: " + qtdDias)
-
         qtdDias = qtdDias + dia + diasExtras
-        console.log("qtdDias3: " + qtdDias)
 
         return qtdDias
     }
@@ -180,7 +173,7 @@ class Calendario {
         var qtdAnosBissextos = Math.floor(qtdDias / 1461)
 
         // Calcula quantidade de anos
-        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365)
+        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365) + 1
 
         // Calcula quantidade de dias do ano atual
         var qtdDiasAnoAtual = qtdDias - qtdAnosBissextos - (qtdAnos * 365)
