@@ -160,6 +160,7 @@ class Calendario {
         // Calcula quantidade de meses
         var qtdMeses = Math.floor(qtdDiasAnoAtual / 30)
 
+        console.log("qtdMeses1 = " + qtdMeses)
         // Calcula quantidade de dias
         for (let mes = 0; mes < qtdMeses; mes++) {
             qtdDiasAnoAtual -= meses[mes];
@@ -172,36 +173,43 @@ class Calendario {
         qtdMeses -= this.diaDeReferenciaGregoriano.mes
         qtdDias -= this.diaDeReferenciaGregoriano.dia
 
+        console.log("qtdMeses2 = " + qtdMeses)
         if (qtdMeses <= 0) {
             qtdMeses = 12 - qtdMeses
             qtdAnos -= 1
         }
 
+        console.log("qtdMeses3 = " + qtdMeses)
         if (qtdMeses > 12) {
             qtdMeses = qtdMeses - 12
             qtdAnos += 1
         }
 
+        console.log("qtdMeses4 = " + qtdMeses)
         if (qtdDias <= 0) {
             qtdDias = meses[qtdMeses] - qtdDias
             qtdMeses -= 1
         }
 
+        console.log("qtdMeses5 = " + qtdMeses)
         if (qtdDias > meses[qtdMeses]) {
             qtdDias = qtdDias - meses[qtdMeses]
             qtdMeses += 1
         }
 
+        console.log("qtdMeses6 = " + qtdMeses)
         if (qtdMeses <= 0) {
             qtdMeses = 12 - qtdMeses
             qtdAnos -= 1
         }
 
+        console.log("qtdMeses7 = " + qtdMeses)
         if (qtdMeses > 12) {
             qtdMeses = qtdMeses - 12
             qtdAnos += 1
         }
 
+        console.log("qtdMeses8 = " + qtdMeses)
         // Gera objeto 
         data = { 
             "dia": qtdDias,
