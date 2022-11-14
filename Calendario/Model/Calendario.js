@@ -198,13 +198,37 @@ class Calendario {
         // Calcula AC/DC
         qtdAnos -= this.diaDeReferenciaGregoriano.ano
         qtdMeses -= this.diaDeReferenciaGregoriano.mes
+        qtdDias -= this.diaDeReferenciaGregoriano.dia
 
         if (qtdMeses <= 0) {
             qtdMeses = 12 - qtdMeses
             qtdAnos -= 1
         }
 
-        
+        if (qtdMeses > 12) {
+            qtdMeses = qtdMeses - 12
+            qtdAnos += 1
+        }
+
+        if (qtdDias <= 0) {
+            qtdDias = meses[qtdMeses] - qtdDias
+            qtdMeses -= 1
+        }
+
+        if (qtdDias > meses[qtdMeses]) {
+            qtdDias = qtdDias - meses[qtdMeses]
+            qtdMeses += 1
+        }
+
+        if (qtdMeses <= 0) {
+            qtdMeses = 12 - qtdMeses
+            qtdAnos -= 1
+        }
+
+        if (qtdMeses > 12) {
+            qtdMeses = qtdMeses - 12
+            qtdAnos += 1
+        }
 
         // Gera objeto 
         data = { 
