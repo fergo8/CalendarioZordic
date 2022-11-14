@@ -53,18 +53,12 @@ class Calendario {
     CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, dataGregoriano) {
         var qtdDias = 0
         var meses = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-        var linha = 0
 
         // Soma os dias de cada mês do dia 22/09/-305 até a data em questão,
         // desconsiderando regra de anos bissextos
-        linha = 1
         var ano = diaDeReferenciaGregoriano.ano + dataGregoriano.ano - 1
         qtdDias += (ano - 1) * 365
 
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
-        linha = 2
         var totalMeses = dataGregoriano.mes
         for (var mes = 1; mes < totalMeses; mes++) {
             qtdDias += meses[mes-1]
@@ -74,33 +68,18 @@ class Calendario {
             qtdDias += 31 + 30 + 31
         }
         
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
-        linha = 3
         qtdDias += (diaDeReferenciaGregoriano.dia + dataGregoriano.dia)
         
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
-        linha = 4
         // Calcula dias extras por anos bissextos
         var diasExtras = Math.floor((ano / 4) - (ano / 100) + (ano / 400))
         
         qtdDias += diasExtras
 
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
-        linha = 5
         // Adiciona +1 dia caso ano atual seja bissexto e já tenha passado de fevereiro
         if (this.EhAnoBissexto(dataGregoriano.ano) && (dataGregoriano.mes - 1) >= 2) {
             qtdDias += 1;
         }
         
-        console.log("Linha" + linha)
-        console.log(qtdDias)
-
         return qtdDias + 18
     }
     
