@@ -173,7 +173,7 @@ class Calendario {
         var qtdAnosBissextos = Math.floor(qtdDias / 1461)
 
         // Calcula quantidade de anos
-        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365) + 1
+        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365)
 
         // Calcula quantidade de dias do ano atual
         var qtdDiasAnoAtual = qtdDias - qtdAnosBissextos - (qtdAnos * 365)
