@@ -110,9 +110,9 @@ class Calendario {
         // Calcula quantidade de dias extras pelos anos bissextos
         var diasExtras = Math.floor(ano / 4)
 
-        qtdDias += (ano - 1) * 365
-        qtdDias += (mes - 1) * 30
-        qtdDias += dia + diasExtras
+        qtdDias = qtdDias + ((ano - 1) * 365)
+        qtdDias = qtdDias + ((mes - 1) * 30)
+        qtdDias = qtdDias + dia + diasExtras
 
         return qtdDias
     }
