@@ -195,6 +195,17 @@ class Calendario {
 
         qtdDias = qtdDiasAnoAtual
 
+        // Calcula AC/DC
+        qtdAnos -= this.diaDeReferenciaGregoriano.ano
+        qtdMeses -= this.diaDeReferenciaGregoriano.mes
+
+        if (qtdMeses <= 0) {
+            qtdMeses = 12 - qtdMeses
+            qtdAnos -= 1
+        }
+
+        
+
         // Gera objeto 
         data = { 
             "dia": qtdDias,
