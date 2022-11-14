@@ -221,7 +221,7 @@ class Calendario {
         var dataGregoriano = { "dia": 0, "mes": 0, "ano": 0 }
 
         console.log(ano + "/" + mes + "/" + dia)
-        var qtdDias = this.CalcularQuantidadeDeDiasGregoriano(ano, mes, dia)
+        var qtdDias = this.CalcularQuantidadeDeDiasGregoriano(parseInt(ano), parseInt(mes), parseInt(dia))
 
         console.log("qtdDias (novo to greg) = " + qtdDias)
         dataGregoriano = this.CalcularDiaDoGregoriano(qtdDias)
