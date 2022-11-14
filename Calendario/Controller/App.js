@@ -266,12 +266,15 @@ function ConverterData() {
     var dataGregoriano = document.getElementById("data-gregoriano")
     var dataCalendarioNovo = document.getElementById("data-calendario-novo")
     
+    if (dataGregoriano.value == "" && dataCalendarioNovo.value == "") {
+        console.log("Datas não foram preenchidas")
+        return
+    }
+
     var data = conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
 
     console.log(data)
-    if (dataGregoriano.value != "") {
-        dataCalendarioNovo.value = AjustarFormatoData(data)
-    }
+    dataCalendarioNovo.value = AjustarFormatoData(data)
 }
 
 function AjustarFormatoData(data) {

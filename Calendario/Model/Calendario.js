@@ -161,4 +161,13 @@ class Calendario {
 
         return hoje
     }
+
+    ConverterParaGregoriano(a, b, c) {
+        var dataGregoriano = { "dia": 0, "mes": 0, "ano": 0 }
+
+        console.log(a + "/" + b + "/" + c)
+        //var qtdDias = this.CalcularQuantidadeDeDias(dataCalendarioNovo)
+
+        return dataGregoriano
+    }
 }

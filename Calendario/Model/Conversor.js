@@ -73,6 +73,15 @@ class Conversor {
             hoje = calendario.hoje
         }
 
+        if (dataCalendarioNovo.value != "") {
+            var dataArray = dataGregoriano.value.split("-")
+            var dataArrayNovo = dataCalendarioNovo.value.split("-")
+            
+            const calendario = new Calendario(new Date(dataArray[0], dataArray[1]-1, dataArray[2]))
+            
+            hoje = calendario.ConverterParaGregoriano(dataArrayNovo[0], dataArrayNovo[1], dataArrayNovo[2])
+        }
+
         return hoje
     }
 }
