@@ -104,7 +104,7 @@ class Calendario {
         return qtdDias + 18
     }
     
-    CalcularQuantidadeDeDias(ano, mes, dia) {
+    CalcularQuantidadeDeDiasGregoriano(ano, mes, dia) {
         var qtdDias = 0
 
         // Calcula quantidade de dias extras pelos anos bissextos
@@ -214,7 +214,7 @@ class Calendario {
         var dataGregoriano = { "dia": 0, "mes": 0, "ano": 0 }
 
         console.log(ano + "/" + mes + "/" + dia)
-        var qtdDias = this.CalcularQuantidadeDeDias(ano, mes, dia)
+        var qtdDias = this.CalcularQuantidadeDeDiasGregoriano(ano, mes, dia)
 
         console.log("qtdDias = " + qtdDias)
         dataGregoriano = this.CalcularDiaDoGregoriano(qtdDias)
