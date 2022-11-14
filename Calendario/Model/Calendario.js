@@ -50,7 +50,7 @@ class Calendario {
         return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
     }
 
-    CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano) {
+    CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, dataGregoriano) {
         var qtdDias = 0
         var meses = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
         var linha = 0
@@ -201,7 +201,6 @@ class Calendario {
 
     GerarDiaDeHoje(diaDeReferenciaGregoriano, hojeGregoriano) {
         var hoje = { "dia": 0, "mes": 0, "ano": 0 }
-        diaDeReferenciaGregoriano = { "dia": 8, "mes": 3, "ano": 305 }
 
         console.log(hojeGregoriano.dia + "/" + hojeGregoriano.mes + "/" + hojeGregoriano.ano)
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
