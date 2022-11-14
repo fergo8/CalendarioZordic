@@ -274,7 +274,11 @@ function ConverterData() {
     var data = conversor.ConverterData(dataGregoriano, dataCalendarioNovo)
 
     console.log(data)
-    dataCalendarioNovo.value = AjustarFormatoData(data)
+    if (dataGregoriano.value == "") {
+        dataGregoriano.value = AjustarFormatoData(data)
+    } else {
+        dataCalendarioNovo.value = AjustarFormatoData(data)
+    }
 }
 
 function AjustarFormatoData(data) {

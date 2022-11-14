@@ -205,6 +205,7 @@ class Calendario {
         console.log(hojeGregoriano.dia + "/" + hojeGregoriano.mes + "/" + hojeGregoriano.ano)
         var qtdDias = this.CalcularQuantidadeDeDias(diaDeReferenciaGregoriano, hojeGregoriano)
 
+        console.log("qtdDias (greg to novo) = " + qtdDias)
         hoje = this.CalcularDiaDoCalendarioNovo(qtdDias, diaDeReferenciaGregoriano)
 
         return hoje
@@ -216,7 +217,7 @@ class Calendario {
         console.log(ano + "/" + mes + "/" + dia)
         var qtdDias = this.CalcularQuantidadeDeDiasGregoriano(ano, mes, dia)
 
-        console.log("qtdDias = " + qtdDias)
+        console.log("qtdDias (novo to greg) = " + qtdDias)
         dataGregoriano = this.CalcularDiaDoGregoriano(qtdDias)
 
         return dataGregoriano
