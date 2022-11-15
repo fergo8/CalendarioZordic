@@ -174,8 +174,8 @@ class Calendario {
 
         // Calcula AC/DC
         qtdAnos -= this.diaDeReferenciaGregoriano.ano
-        qtdMeses -= this.diaDeReferenciaGregoriano.mes
-        qtdDias -= this.diaDeReferenciaGregoriano.dia
+        qtdMeses += this.diaDeReferenciaGregoriano.mes
+        qtdDias += this.diaDeReferenciaGregoriano.dia
 
         console.log("qtdMeses2 = " + qtdMeses)
         if (qtdMeses <= 0) {
