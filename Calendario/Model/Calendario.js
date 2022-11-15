@@ -210,7 +210,7 @@ class Calendario {
         data = { 
             "dia": qtdDias,
             "mes": qtdMeses + 1,
-            "ano": qtdAnos - this.diaDeReferenciaGregoriano.ano
+            "ano": qtdAnos - this.diaDeReferenciaGregoriano.ano + 2
         }
 
         return data
