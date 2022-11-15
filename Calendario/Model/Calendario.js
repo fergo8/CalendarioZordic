@@ -157,7 +157,7 @@ class Calendario {
 
         console.log("qtdAnosBissextos = " + qtdAnosBissextos)
         // Calcula quantidade de anos
-        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365) - this.diaDeReferenciaGregoriano.ano
+        var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365)
 
         console.log("qtdAnos = " + qtdAnos)
         // Calcula quantidade de dias do ano atual
@@ -210,7 +210,7 @@ class Calendario {
         data = { 
             "dia": qtdDias,
             "mes": qtdMeses + 1,
-            "ano": qtdAnos
+            "ano": qtdAnos - this.diaDeReferenciaGregoriano.ano
         }
 
         return data
