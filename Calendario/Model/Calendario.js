@@ -181,34 +181,28 @@ class Calendario {
         if (qtdMeses <= 0) {
             qtdMeses = 12 - qtdMeses
             qtdAnos -= 1
-        }
-
-        console.log("qtdMeses3 = " + qtdMeses)
-        if (qtdMeses > 12) {
+        } else if (qtdMeses > 12) {
+            console.log("qtdMeses3 = " + qtdMeses)
             qtdMeses = qtdMeses - 12
             qtdAnos += 1
         }
-
-        console.log("qtdMeses4 = " + qtdMeses)
+        
         if (qtdDias <= 0) {
+            console.log("qtdMeses4 = " + qtdMeses)
             qtdDias = meses[qtdMeses] - qtdDias
             qtdMeses -= 1
-        }
-
-        console.log("qtdMeses5 = " + qtdMeses)
-        if (qtdDias > meses[qtdMeses]) {
+        } else if (qtdDias > meses[qtdMeses]) {
+            console.log("qtdMeses5 = " + qtdMeses)
             qtdDias = qtdDias - meses[qtdMeses]
             qtdMeses += 1
         }
-
-        console.log("qtdMeses6 = " + qtdMeses)
+        
         if (qtdMeses <= 0) {
+            console.log("qtdMeses6 = " + qtdMeses)
             qtdMeses = 12 - qtdMeses
             qtdAnos -= 1
-        }
-
-        console.log("qtdMeses7 = " + qtdMeses)
-        if (qtdMeses > 12) {
+        } else if (qtdMeses > 12) {
+            console.log("qtdMeses7 = " + qtdMeses)
             qtdMeses = qtdMeses - 12
             qtdAnos += 1
         }
