@@ -148,6 +148,9 @@ class Calendario {
             return data
         }
 
+        // Subtrai 101 dias do calendário (a.C.)
+        qtdDias = qtdDias - 101
+
         console.log("qtdDias = " + qtdDias)
         // Calcula quantidade de anos bissextos
         var qtdAnosBissextos = Math.floor(qtdDias / 1461)
@@ -171,11 +174,6 @@ class Calendario {
         }
 
         qtdDias = qtdDiasAnoAtual
-
-        // Calcula AC/DC
-        qtdAnos -= this.diaDeReferenciaGregoriano.ano
-        qtdMeses += this.diaDeReferenciaGregoriano.mes
-        qtdDias += this.diaDeReferenciaGregoriano.dia
 
         console.log("qtdMeses2 = " + qtdMeses)
         if (qtdMeses <= 0) {
