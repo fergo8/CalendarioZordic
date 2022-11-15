@@ -209,7 +209,7 @@ class Calendario {
         // Gera objeto 
         data = { 
             "dia": qtdDias,
-            "mes": qtdMeses,
+            "mes": qtdMeses + 1,
             "ano": qtdAnos
         }
 
