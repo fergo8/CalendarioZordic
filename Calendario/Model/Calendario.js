@@ -148,15 +148,19 @@ class Calendario {
             return data
         }
 
+        console.log("qtdDias = " + qtdDias)
         // Calcula quantidade de anos bissextos
         var qtdAnosBissextos = Math.floor(qtdDias / 1461)
 
+        console.log("qtdAnosBissextos = " + qtdAnosBissextos)
         // Calcula quantidade de anos
         var qtdAnos = Math.floor((qtdDias - qtdAnosBissextos) / 365)
 
+        console.log("qtdAnos = " + qtdAnos)
         // Calcula quantidade de dias do ano atual
         var qtdDiasAnoAtual = qtdDias - qtdAnosBissextos - (qtdAnos * 365)
 
+        console.log("qtdDiasAnoAtual = " + qtdDiasAnoAtual)
         // Calcula quantidade de meses
         var qtdMeses = Math.floor(qtdDiasAnoAtual / 30)
 
