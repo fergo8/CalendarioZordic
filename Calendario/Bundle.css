@@ -117,3 +117,6 @@ body {
     background-color: #02a388 !important;
     border-color: #02a388 !important;
 }
+.conversor-input {
+    max-width: 107.5px;
+}
