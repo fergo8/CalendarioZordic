@@ -86,8 +86,14 @@ class Conversor {
     }
 
     AjustarDecimoTerceiroMes(data) {
-        if (data.mes == 13) {
-            
+        if (data.mes == 13 && data.dia == 0) {
+            data.dia = 30
+            data.mes = 12
+        }
+
+        if (data.mes == 1 && data.dia == 0) {
+            data.dia = 5
+            data.mes = 13
         }
 
         return data
