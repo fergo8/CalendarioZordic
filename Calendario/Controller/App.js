@@ -277,7 +277,8 @@ function ConverterData() {
     if (dataGregoriano.value == "") {
         dataGregoriano.value = AjustarFormatoData(data)
     } else {
-        dataCalendarioNovo.value = AjustarFormatoData(data)
+        data = conversor.AjustarDecimoTerceiroMes(data)
+        dataCalendarioNovo.value = AjustarFormatoDataCalendarioNovo(data)
     }
 }
 
@@ -292,4 +293,17 @@ function AjustarFormatoData(data) {
         dia = "0" + dia
 
     return ano + "-" + mes + "-" + dia
+}
+
+function AjustarFormatoDataCalendarioNovo(data) {
+    var ano = data.ano.toString()
+    var mes = data.mes.toString()
+    var dia = data.dia.toString()
+
+    if(mes.length < 2)
+        mes = "0" + mes
+    if(dia.length < 2)
+        dia = "0" + dia
+
+    return dia + " / " + mes + " / " + ano
 }

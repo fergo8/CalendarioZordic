@@ -84,4 +84,12 @@ class Conversor {
 
         return hoje
     }
+
+    AjustarDecimoTerceiroMes(data) {
+        if (data.mes == 13) {
+            
+        }
+
+        return data
+    }
 }
