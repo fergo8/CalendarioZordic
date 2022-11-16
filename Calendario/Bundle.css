@@ -118,5 +118,8 @@ body {
     border-color: #02a388 !important;
 }
 .conversor-input {
-    max-width: 107.5px;
+    width: 107.8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
