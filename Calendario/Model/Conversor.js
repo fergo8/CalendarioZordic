@@ -33,7 +33,7 @@ class Conversor {
         const inputCalendario = document.createElement("input")
         inputCalendario.setAttribute("class", "conversor-input")
         inputCalendario.setAttribute("id", "data-calendario-novo")
-        inputCalendario.setAttribute("type", "date")
+        inputCalendario.setAttribute("type", "text")
         
         const submit = document.createElement("button")
         submit.setAttribute("class", "btn btn-secondary btn-sm conversor-submit")
