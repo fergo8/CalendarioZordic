@@ -1,7 +1,12 @@
-body {
+html, body {
     font-family: 'Roboto Condensed', sans-serif !important;
+    height: 100%;
+}
+
+#app {
     background: url('../Images/Fundo.png');
     background-attachment: fixed;
+    height: 100%;
 }
 
 /* ===== Menu ===== */
