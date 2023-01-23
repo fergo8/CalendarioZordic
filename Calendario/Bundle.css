@@ -4,7 +4,7 @@ html, body {
 }
 
 #app {
-    background: url('../Images/Fundo.png');
+    background: url('../Calendario/Images/Fundo.png');
     background-attachment: fixed;
     height: 100%;
 }
@@ -42,6 +42,7 @@ html, body {
 .seta {
     padding: 10px 10px;
     border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .seta:hover {
     background-color: #d8c2fe;
@@ -92,6 +93,7 @@ html, body {
     border-bottom-style: solid;
     border-color: #d8c2fe;
     padding: 15px 0px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .bloco-mini-dia {
@@ -106,6 +108,7 @@ html, body {
 .bloco-notas {
     border: 2px solid #d8c2fe;
     border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== Conversor de datas ===== */
