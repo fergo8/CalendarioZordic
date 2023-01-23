@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto Condensed', sans-serif !important;
     background: url('../Images/Fundo.png');
+    background-attachment: fixed;
 }
 
 /* ===== Menu ===== */
