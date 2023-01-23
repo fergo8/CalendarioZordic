@@ -15,6 +15,7 @@ html, body {
     padding: 15px 5% 15px 5%;
     background-color: black;
     color: white;
+    font-family: 'Bellefair', serif;
 }
 
 .menu-superior {
@@ -131,8 +132,8 @@ html, body {
     text-align: center;
 }
 #btn-converter {
-    background-color: #02a388 !important;
-    border-color: #02a388 !important;
+    background-color: #A3B6BE !important;
+    border-color: #A3B6BE !important;
 }
 .conversor-input {
     width: 107.8px;
