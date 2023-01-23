@@ -135,6 +135,7 @@ html, body {
 #btn-converter {
     background-color: #A3B6BE !important;
     border-color: #A3B6BE !important;
+    color: black;
 }
 .conversor-input {
     width: 107.8px;
