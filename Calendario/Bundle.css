@@ -44,7 +44,7 @@ html, body {
     border-radius: 15px;
 }
 .seta:hover {
-    background-color: #d8c2fe;
+    background-color: #5F7176;
     cursor: pointer;
 }
 
@@ -76,7 +76,7 @@ html, body {
     background-color: rgba(255, 255, 255, 0.9);
 }
 .bloco-dia-atual {
-    background-color: #d8c2fe;
+    background-color: #5F7176;
 }
 
 /* ===== Mini-calendário ===== */
@@ -95,7 +95,7 @@ html, body {
     border-top-style: solid;
     border-bottom: 5px;
     border-bottom-style: solid;
-    border-color: #d8c2fe;
+    border-color: #5F7176;
     padding: 15px 0px;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -106,11 +106,11 @@ html, body {
     padding: 0px 5px !important;
 }
 .bloco-mini-dia-atual {
-    background-color: #d8c2fe;
+    background-color: #5F7176;
 }
 
 .bloco-notas {
-    border: 2px solid #d8c2fe;
+    border: 2px solid #5F7176;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.9);
 }
