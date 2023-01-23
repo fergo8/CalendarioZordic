@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const calendario = new Calendario(new Date(Date.now()))
 
     app.appendChild(GerarMenuSuperior(calendario))
+    app.appendChild(GerarRespiro(calendario))
     app.appendChild(GerarCalendario(calendario))
     app.appendChild(GerarMiniCalendario(calendario))
 })
@@ -66,6 +67,13 @@ function GerarMenuSuperior(calendario) {
     articleMenu.appendChild(GerarConversor())
 
     return articleMenu
+}
+
+function GerarRespiro(calendario) {
+    const articleRespiro = document.createElement("article")
+    articleRespiro.setAttribute("class", "article-respiro")
+    
+    return articleRespiro
 }
 
 function GerarCalendario(calendario) {
