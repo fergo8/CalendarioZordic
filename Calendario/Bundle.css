@@ -10,6 +10,8 @@ body {
 .menu-superior {
     width: 70%;
     display: inline-block;
+    background-color: black;
+    color: white;
 }
 
 #logo {
