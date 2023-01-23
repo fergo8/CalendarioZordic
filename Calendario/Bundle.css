@@ -6,6 +6,7 @@ html, body {
 #app {
     background: url('../Calendario/Images/Fundo.png');
     background-attachment: fixed;
+    background-position: center;
     height: 100%;
 }
 
