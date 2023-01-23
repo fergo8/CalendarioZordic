@@ -5,13 +5,13 @@ body {
 /* ===== Menu ===== */
 .article-menu {
     padding: 15px 5% 15px 5%;
+    background-color: black;
+    color: white;
 }
 
 .menu-superior {
     width: 70%;
     display: inline-block;
-    background-color: black;
-    color: white;
 }
 
 #logo {
