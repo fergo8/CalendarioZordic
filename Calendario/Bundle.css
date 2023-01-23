@@ -76,6 +76,7 @@ html, body {
     text-align: center;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.9);
+    padding-top: 5px;
 }
 .bloco-dia-atual {
     background-color: #A3B6BE;
