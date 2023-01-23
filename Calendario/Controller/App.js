@@ -185,6 +185,7 @@ function GerarMiniCalendario(calendario) {
 
     divPrincipal.appendChild(divMiniCalendario)
 
+    /*
     divPrincipal.appendChild(CriarElementoHTML(
         "div",
         { "class": "col-1" },
@@ -196,6 +197,7 @@ function GerarMiniCalendario(calendario) {
         { "class": "col-8 bloco-notas" },
         ""
     ))
+    */
 
     article.appendChild(divPrincipal)
 
