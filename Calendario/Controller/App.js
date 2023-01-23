@@ -56,7 +56,7 @@ function GerarMenuSuperior(calendario) {
     menu.appendChild(CriarElementoHTML(
         "button", 
         { 
-            "class": "btn btn-light",
+            "class": "btn btn-light btn-hoje",
             "onclick": "MudarMes(0)" 
         }, 
         "Hoje"

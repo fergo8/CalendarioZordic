@@ -48,6 +48,10 @@ html, body {
     cursor: pointer;
 }
 
+.btn-hoje {
+    margin: 0px 5px;
+}
+
 /* ===== Calendário ===== */
 .article-border {
     border-top: 0.8px;
